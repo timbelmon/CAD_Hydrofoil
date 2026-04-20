@@ -8469,7 +8469,7 @@
 	(footprint "Module:Arduino_Nano"
 		(layer "F.Cu")
 		(uuid "e18d074c-4c09-425d-96ed-36b9e1a417ea")
-		(at 104.9095 25.935)
+		(at 58.5 35.38)
 		(descr "Arduino Nano, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf")
 		(tags "Arduino Nano")
 		(property "Reference" "A1"
