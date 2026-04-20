@@ -10,3 +10,6 @@ Core components:
 - Arduino-based control system
 
 The goal is to create a fully integrated, self-stabilizing hydrofoil platform combining mechanical design, electronics, and embedded control.
+
+## Basic Sketch
+![sketch](.etc/basic_sketch.png)
