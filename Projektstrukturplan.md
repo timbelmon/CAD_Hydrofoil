@@ -6,16 +6,16 @@ kanban-plugin: board
 
 ## Planung
 
-- [ ] 110 Finales Konzept entscheiden
-- [ ] 120 Kanbanplan
-- [ ] 130 Meilensteinplan
-- [ ] 140 GANTT Diagramm
+- [x] 110 Finales Konzept entscheiden
+- [x] 120 Kanbanplan
+- [x] 130 Meilensteinplan
+- [x] 140 GANTT Diagramm
 - [ ] 150 Networking FabLab
 
 
 ## Grundfunktionen
 
-- [ ] 210 Antriebe Testen
+- [x] 210 Antriebe Testen
 - [ ] 220 Schematic Schiff
 - [ ] 230 Code Schiff
 - [ ] 240 Schematic Remote
