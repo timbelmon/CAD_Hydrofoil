@@ -16,17 +16,41 @@ RF24 radio(7, 8); // CE, CSN
 
 const byte address[6] = "00001";
 
+//  Data structure for transmission
+
+struct Data {
+  int x;
+  bool motorOn;
+};
+
+Data data;
+
+const int joyX = A0;
+const int buttonPin = 2;
+
+
+
 void setup()
 {
-  radio.begin();
+  Serial.begin(9600);
+
+  if (!radio.begin()){
+    Serial.println("Radio error!");
+    while(1);
+  }
+
   radio.openWritingPipe(address);
   radio.setPALevel(RF24_PA_MIN);
   radio.stopListening();
+
+  pinMode(buttonPin, INPUT_PULLUP);
 }
 
 void loop()
 {
-  const char text[] = "Hello World";
-  radio.write(&text, sizeof(text));
-  delay(1000);
+  data.x = analogRead(joyX);                    // Read Joystick X-axis (0-1023)
+  data.motorOn = digitalRead(buttonPin) == LOW; // Read button -> true / false
+
+  radio.write(&data, sizeof(data));             // send data    
+  delay(1000);                                  // testing delay
 }
