@@ -52,5 +52,5 @@ void loop()
   data.motorOn = digitalRead(buttonPin) == LOW; // Read button -> true / false
 
   radio.write(&data, sizeof(data));             // send data    
-  delay(1000);                                  // testing delay
+  delay(20);
 }
