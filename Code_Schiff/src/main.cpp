@@ -7,6 +7,7 @@
  * Library: TMRh20/RF24, https://github.com/tmrh20/RF24/
  */
 #include <Arduino.h>
+#include <constants.h>
 #include <printf.h>
 #include <SPI.h>
 #include <nRF24L01.h>
@@ -15,6 +16,8 @@
 RF24 radio(7, 8); // CE, CSN
 
 const byte address[6] = "00001";
+
+bool getData(byte *buffer, byte *steer, byte *throttle, byte *foilStab);
 
 void setup()
 {
@@ -35,6 +38,9 @@ void setup()
 
 void loop()
 {
+
+    byte *buffer = (byte *)calloc(constants::bufferSize, sizeof(byte));
+
     if (radio.available())
     {
         char text[32] = {0}; // Initialize with all zeros
@@ -47,4 +53,36 @@ void loop()
             Serial.println(text);
         }
     }
+}
+
+bool getData(byte *buffer, byte *steer, byte *throttle, bool *foilStab)
+{
+    int i = 0;
+    bool keepAlive = false;
+    while (buffer[i] != 0)
+    {
+        if (i = constants::bufferSize)
+            return;
+        if (buffer[i] = 1)
+        {
+            keepAlive = true;
+        }
+        else if (buffer[i] >= constants::steerMin && buffer[i] <= constants::steerMax)
+            *steer = buffer[i];
+        else if (buffer[i] == constants::foilStabOn)
+            *foilStab = true;
+        else if (buffer[i] == constants::foilStabOff)
+            *foilStab = false;
+        else if (constants::throttleToggle)
+        {
+            if (buffer[i] == 2)
+                *throttle = constants::throttleMax;
+            if (buffer[i] == 3)
+                *throttle = constants::throttleMin;
+        }
+        else if (buffer[i] >= constants::throttleMin && buffer[i] <= constants::throttleMax)
+            *throttle = buffer[i];
+        i++;
+    }
+    return keepAlive;
 }
