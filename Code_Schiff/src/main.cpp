@@ -17,7 +17,8 @@ RF24 radio(7, 8); // CE, CSN
 
 const byte address[6] = "00001";
 
-bool getData(byte *buffer, byte *steer, byte *throttle, byte *foilStab);
+bool getData(uint8_t *buffer, uint8_t *steer, uint8_t *throttle, uint8_t *foilStab);
+bool readRadio(uint8_t *buffer, RF24 *radio);
 
 void setup()
 {
@@ -38,24 +39,21 @@ void setup()
 
 void loop()
 {
-
-    byte *buffer = (byte *)calloc(constants::bufferSize, sizeof(byte));
-
-    if (radio.available())
-    {
-        char text[32] = {0}; // Initialize with all zeros
-        radio.read(&text, sizeof(text));
-
-        // Only print if there is actually content
-        if (strlen(text) > 0)
-        {
-            Serial.print("Received: ");
-            Serial.println(text);
-        }
-    }
+    uint8_t *buffer = (uint8_t *)calloc(constants::bufferSize, sizeof(uint8_t));
 }
 
-bool getData(byte *buffer, byte *steer, byte *throttle, bool *foilStab)
+bool readRadio(uint8_t *buffer, RF24 *radio)
+{
+    if (radio->available())
+    {
+        radio->read(buffer, sizeof(buffer));
+    }
+    else
+        return false;
+    return true;
+}
+
+bool getData(uint8_t *buffer, uint8_t *steer, uint8_t *throttle, bool *foilStab)
 {
     int i = 0;
     bool keepAlive = false;
