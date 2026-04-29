@@ -37,7 +37,7 @@ void setup()
             ; // Stop here if radio isn't found
     }
     radio.openReadingPipe(0, address);
-    radio.setPALevel(RF24_PA_MIN);
+    radio.setPALevel(RF24_PA_MAX);
     radio.startListening();
     Serial.println("Receiver Initialized...");
 
@@ -48,6 +48,15 @@ void setup()
     pinMode(constantsPinsShip::in3Pin, OUTPUT);
     pinMode(constantsPinsShip::in4Pin, OUTPUT);
     servo.attach(constantsPinsShip::servoSteerPin);
+
+    // Steering servo calibration test: left -> right -> center
+    servo.write(0);
+    delay(500);
+    servo.write(180);
+    delay(500);
+    servo.write(90);
+    delay(500);
+    Serial.println("Calibration complete.");
 }
 
 void loop()
@@ -56,6 +65,21 @@ void loop()
     uint8_t steer = 0;
     uint8_t throttle = 0;
     static uint8_t buffer[constantsCom::bufferSize];
+
+    // Check for serial input to manually control steering
+    /*
+    if (Serial.available())
+    {
+        String input = Serial.readStringUntil('\n');
+        int steerVal = input.toInt();
+        if (steerVal >= 0 && steerVal <= 180)
+        {
+            changeSteer(steerVal);
+            delay(100); // Small delay to ensure servo has time to move
+            Serial.println("Manual steer: " + String(steerVal));
+        }
+    }
+    */
 
     memset(buffer, 0, sizeof(buffer));
     bool read = readRadio(buffer, &radio);
@@ -89,6 +113,7 @@ bool readRadio(uint8_t *buffer, RF24 *radio)
     if (radio->available())
     {
         radio->read(buffer, constantsCom::bufferSize);
+        Serial.println("Received: "+ String(buffer[0], HEX)+"|"+ String(buffer[1], HEX)+"|"+ String(buffer[2], HEX));
     }
     else
         return false;
