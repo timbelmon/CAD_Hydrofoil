@@ -3156,6 +3156,12 @@
 		(uuid "57a65305-3cbc-4422-853a-ce26a808e499")
 	)
 	(junction
+		(at 85.09 20.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "59c0d04f-f101-4019-94c2-0e0604ebb0a0")
+	)
+	(junction
 		(at 88.9 12.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3184,12 +3190,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8b90ada1-e61b-41c4-8273-88ddb69cc7e9")
-	)
-	(junction
-		(at 85.09 20.32)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "946cbb92-5eb3-4a22-89ab-f0b6f406b56b")
 	)
 	(junction
 		(at 81.28 93.98)
@@ -3465,16 +3465,6 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 17.78) (xy 76.2 12.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "02982ea9-6497-40ef-9982-e6a2b4ae3987")
-	)
-	(wire
-		(pts
 			(xy 33.02 134.62) (xy 34.29 134.62)
 		)
 		(stroke
@@ -3655,6 +3645,16 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 20.32) (xy 85.09 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b231e72-b1fb-49f3-ab99-8b79c9eed3da")
+	)
+	(wire
+		(pts
 			(xy 247.65 20.32) (xy 247.65 21.59)
 		)
 		(stroke
@@ -3742,16 +3742,6 @@
 			(type default)
 		)
 		(uuid "4103a1e5-82ab-4b73-b7c1-a85c94075006")
-	)
-	(wire
-		(pts
-			(xy 76.2 20.32) (xy 85.09 20.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41632d1a-1d46-4077-bc01-46fff40a6e0a")
 	)
 	(wire
 		(pts
@@ -4635,6 +4625,16 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 12.7) (xy 76.2 17.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7332d40-04f4-43a4-b934-4a55364a8b53")
+	)
+	(wire
+		(pts
 			(xy 167.64 33.02) (xy 167.64 45.72)
 		)
 		(stroke
@@ -5200,16 +5200,16 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 19.05 38.1 90)
+		(at 21.59 38.1 270)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "14db8dcf-e4fc-450b-93c3-24630302ceda")
 		(property "Reference" "J1"
-			(at 24.13 36.8299 90)
+			(at 16.51 36.8299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5218,7 +5218,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 24.13 39.3699 90)
+			(at 16.51 39.3699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5227,7 +5227,7 @@
 			)
 		)
 		(property "Footprint" "Connector_AMASS:AMASS_XT30PW-F_1x02_P2.50mm_Horizontal"
-			(at 19.05 38.1 0)
+			(at 21.59 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5236,7 +5236,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 19.05 38.1 0)
+			(at 21.59 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5245,7 +5245,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 19.05 38.1 0)
+			(at 21.59 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5557,8 +5557,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 71.12 17.78 0)
-		(mirror y)
+		(at 71.12 20.32 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5566,7 +5565,7 @@
 		(dnp no)
 		(uuid "317d6d49-b6b7-43bb-9015-bbf387e13845")
 		(property "Reference" "J5"
-			(at 71.12 26.67 0)
+			(at 71.12 11.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5574,7 +5573,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x02"
-			(at 71.12 24.13 0)
+			(at 71.12 13.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5582,7 +5581,7 @@
 			)
 		)
 		(property "Footprint" "TerminalBlock:TerminalBlock_MaiXu_MX126-5.0-02P_1x02_P5.00mm"
-			(at 71.12 17.78 0)
+			(at 71.12 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5591,7 +5590,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 71.12 17.78 0)
+			(at 71.12 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5600,7 +5599,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 71.12 17.78 0)
+			(at 71.12 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6167,7 +6166,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4d758c6e-dd50-4d79-a3da-a839c6385af5")
 		(property "Reference" "J6"
 			(at 71.12 16.51 0)
