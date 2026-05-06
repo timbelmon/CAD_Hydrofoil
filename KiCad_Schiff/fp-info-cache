@@ -1,4 +1,4 @@
-27357979848217444
+27359757926832271
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -72117,6 +72117,13 @@ LibraryNewHoleSize
 CP_Radial_D4.0mm_P2.00mm
 CP, Radial series, Radial, pin pitch=2.00mm, diameter=4mm, height=7mm, Electrolytic Capacitor
 CP Radial series Radial pin pitch 2.00mm diameter 4mm height 7mm Electrolytic Capacitor
+0
+2
+2
+LibraryNewHoleSize
+NetTie-2_SMD_Pad0.5mm
+Net tie, 2 pin, 0.5mm square SMD pads
+net tie
 0
 2
 2
