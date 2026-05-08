@@ -1,4 +1,4 @@
-27370427327261362
+27370427373965555
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -72130,7 +72130,7 @@ net tie
 LibraryNewHoleSize
 NetTie_1.6mm
 
-
+net_tie
 0
 2
 2
@@ -72144,7 +72144,7 @@ NetTie_3mm
 LibraryNewHoleSize
 NetTie_4mm
 
-
+net_tie
 0
 2
 2

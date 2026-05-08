@@ -8,6 +8,7 @@
 		(at -0.5 -4 0)
 		(unlocked yes)
 		(layer "F.SilkS")
+		(hide yes)
 		(uuid "56d3fe99-f7cc-4f11-9a46-ae0cec885816")
 		(effects
 			(font
@@ -64,17 +65,6 @@
 			(type solid)
 		)
 		(fill yes)
-		(layer "F.Cu")
-		(uuid "17c94a98-4da5-4004-b91d-3c47dc279edd")
-	)
-	(fp_rect
-		(start -6 -9)
-		(end 4 -5)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill yes)
 		(layer "B.Cu")
 		(uuid "5610e3dd-ccad-473c-ae76-ee14dd17724d")
 	)
@@ -90,20 +80,16 @@
 			)
 		)
 	)
-	(pad "1" thru_hole circle
+	(pad "1" smd circle
 		(at -6 -7)
 		(size 4 4)
-		(drill 1)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
+		(layers "B.Cu" "B.Mask" "B.Paste")
 		(uuid "44042ebc-2de5-47c0-b888-abf3417c02cb")
 	)
-	(pad "2" thru_hole circle
+	(pad "2" smd circle
 		(at 4 -7)
 		(size 4 4)
-		(drill 1)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
+		(layers "B.Cu" "B.Mask" "B.Paste")
 		(uuid "b0ec29c1-c183-4964-a1a3-cf8ed1be39a7")
 	)
 	(embedded_fonts no)
