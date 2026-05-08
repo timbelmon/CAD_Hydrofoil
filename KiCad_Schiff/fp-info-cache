@@ -1,4 +1,4 @@
-27359757926832271
+27370427327261362
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -72128,12 +72128,54 @@ net tie
 2
 2
 LibraryNewHoleSize
+NetTie_1.6mm
+
+
+0
+2
+2
+LibraryNewHoleSize
+NetTie_3mm
+
+
+0
+2
+2
+LibraryNewHoleSize
+NetTie_4mm
+
+
+0
+2
+2
+LibraryNewHoleSize
 PinHeader_1x03_P2.54mm_Horizontal
 Through hole angled pin header, 1x03, 2.54mm pitch, 6mm pin length, single row
 Through hole angled pin header THT 1x03 2.54mm single row
 0
 3
 3
+LibraryNewHoleSize
+PinHeader_1x03_P2.54mm_Vertical
+Through hole straight pin header, 1x03, 2.54mm pitch, single row
+Through hole pin header THT 1x03 2.54mm single row
+0
+3
+3
+LibraryNewHoleSize
+Unbenannt
+
+
+0
+0
+0
+LibraryNewHoleSize
+Unbenannt_1
+
+
+0
+0
+0
 LibraryNewHoleSize
 nRF24L01_Breakout
 nRF24L01 breakout board

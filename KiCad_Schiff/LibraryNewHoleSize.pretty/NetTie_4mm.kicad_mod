@@ -1,0 +1,110 @@
+(footprint "NetTie_4mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(tags "net_tie")
+	(property "Reference" "REF**"
+		(at -0.5 -4 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "56d3fe99-f7cc-4f11-9a46-ae0cec885816")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "NetTie_4mm"
+		(at -0.5 -2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "b7ef6077-1770-4540-bcc0-51de59f6eb88")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b7d2d335-2780-4730-aaed-ad4796f3181d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bc5f7364-4a9c-4719-806f-acfd88475b3d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole exclude_from_bom allow_missing_courtyard dnp)
+	(net_tie_pad_groups "1,2")
+	(fp_rect
+		(start -6 -9)
+		(end 4 -5)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Cu")
+		(uuid "17c94a98-4da5-4004-b91d-3c47dc279edd")
+	)
+	(fp_rect
+		(start -6 -9)
+		(end 4 -5)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.Cu")
+		(uuid "5610e3dd-ccad-473c-ae76-ee14dd17724d")
+	)
+	(fp_text user "${REFERENCE}"
+		(at -0.5 -1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "95524a55-1c4e-4c39-9054-c78afb49448b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -6 -7)
+		(size 4 4)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "44042ebc-2de5-47c0-b888-abf3417c02cb")
+	)
+	(pad "2" thru_hole circle
+		(at 4 -7)
+		(size 4 4)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b0ec29c1-c183-4964-a1a3-cf8ed1be39a7")
+	)
+	(embedded_fonts no)
+)
