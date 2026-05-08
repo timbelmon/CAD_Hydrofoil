@@ -1,1 +1,3 @@
-/.vscode
+fp-info-cache
+*-backups
+README.txt
