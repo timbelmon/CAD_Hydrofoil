@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "LibraryNewHoleSize")(type "KiCad")(uri "/home/patrick/Dokumente/GitHub/CAD_Hydrofoil/KiCad_Schiff/LibraryNewHoleSize.pretty")(options "")(descr ""))
+)
