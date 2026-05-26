@@ -1,0 +1,223 @@
+(footprint "PinHeader_1x03_P2.54mm_Vertical"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Through hole straight pin header, 1x03, 2.54mm pitch, single row")
+	(tags "Through hole pin header THT 1x03 2.54mm single row")
+	(property "Reference" "M3"
+		(at 0 -2.38 0)
+		(layer "F.SilkS")
+		(uuid "c7a2c10d-c2ab-4df6-a3ea-58f084da7574")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Motor_Servo"
+		(at 0 7.46 0)
+		(layer "F.Fab")
+		(uuid "f918961b-4fdf-4a12-922a-b8f1f1a98e31")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "http://forums.parallax.com/uploads/attachments/46831/74481.png"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "520d4dfb-5d22-4be3-9d82-6861c15c86d8")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Servo Motor (Futaba, HiTec, JR connector)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "88e3f41a-190e-44fd-9799-32e87dc34bff")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -1.38 -1.38)
+		(end 0 -1.38)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "82a1f880-23b5-4e43-b562-8405edfbcbbe")
+	)
+	(fp_line
+		(start -1.38 0)
+		(end -1.38 -1.38)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0460feea-5c1c-4e08-9d36-3dd64ef0798d")
+	)
+	(fp_line
+		(start -1.38 1.27)
+		(end -1.38 6.46)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "47c95d21-3d9a-4bf7-a71a-34046c7edf39")
+	)
+	(fp_line
+		(start -1.38 1.27)
+		(end 1.38 1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "284e06f0-f456-4865-acb7-17ad7cb71c19")
+	)
+	(fp_line
+		(start -1.38 6.46)
+		(end 1.38 6.46)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7c208282-f036-4aed-962f-fae5371d9a31")
+	)
+	(fp_line
+		(start 1.38 1.27)
+		(end 1.38 6.46)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c133a699-282b-4c0c-b523-d99cc6b899b7")
+	)
+	(fp_rect
+		(start -1.77 -1.77)
+		(end 1.77 6.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "472d3880-45f1-417f-b1b8-77b4bdb64ce0")
+	)
+	(fp_line
+		(start -1.27 -0.635)
+		(end -0.635 -1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f05796a5-ab20-4dc4-886b-efb262379f60")
+	)
+	(fp_line
+		(start -1.27 6.35)
+		(end -1.27 -0.635)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "5b9b266d-e674-4638-a59c-734c922a7db9")
+	)
+	(fp_line
+		(start -0.635 -1.27)
+		(end 1.27 -1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "22f2a875-7c80-43c8-97e6-39874cb0c860")
+	)
+	(fp_line
+		(start 1.27 -1.27)
+		(end 1.27 6.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3776f260-9f99-45ca-858a-0e2b2cbb1a46")
+	)
+	(fp_line
+		(start 1.27 6.35)
+		(end -1.27 6.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e6177623-f6b5-441d-be5a-3c8dd468db57")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.54 90)
+		(layer "F.Fab")
+		(uuid "3eb43c5f-e9e1-42b6-83c7-24fb238e8641")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e6d70a2d-36c9-4d14-b28c-e54e3bdab12c")
+	)
+	(pad "2" thru_hole circle
+		(at 0 2.54)
+		(size 1.8 1.8)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3657c0ae-71f5-4ed0-bb82-9bd8651a26a3")
+	)
+	(pad "3" thru_hole circle
+		(at 0 5.08)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4df0f92c-1f35-4a52-bba4-59bd613eb1de")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

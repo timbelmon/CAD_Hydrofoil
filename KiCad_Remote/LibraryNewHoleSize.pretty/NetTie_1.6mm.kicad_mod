@@ -1,0 +1,96 @@
+(footprint "NetTie_1.6mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(tags "net_tie")
+	(property "Reference" "REF**"
+		(at -1 -5.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "8fbebf9d-c598-4a86-ab7d-ba4e2f83a942")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "NetTie_1.6mm"
+		(at -1.5 -4 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "7a8e7f3f-dc24-4875-80c7-6a630169d1dd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9401e1d3-9300-4a49-af68-a9de483b750b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "54e9ca97-eb07-4943-b78e-c522b9968f10")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(net_tie_pad_groups "1,2")
+	(fp_rect
+		(start -3.5 -7.8)
+		(end 1.5 -6.2)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.Cu")
+		(uuid "5610e3dd-ccad-473c-ae76-ee14dd17724d")
+	)
+	(fp_text user "${REFERENCE}"
+		(at -1.5 -2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "95524a55-1c4e-4c39-9054-c78afb49448b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd circle
+		(at -3.5 -7)
+		(size 1.6 1.6)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "44042ebc-2de5-47c0-b888-abf3417c02cb")
+	)
+	(pad "2" smd circle
+		(at 1.5 -7)
+		(size 1.6 1.6)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "b0ec29c1-c183-4964-a1a3-cf8ed1be39a7")
+	)
+	(embedded_fonts no)
+)
