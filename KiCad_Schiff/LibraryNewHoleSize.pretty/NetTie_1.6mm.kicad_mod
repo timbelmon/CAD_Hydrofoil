@@ -83,13 +83,13 @@
 	(pad "1" smd circle
 		(at -3.5 -7)
 		(size 1.6 1.6)
-		(layers "B.Cu" "B.Mask" "B.Paste")
+		(layers "B.Cu")
 		(uuid "44042ebc-2de5-47c0-b888-abf3417c02cb")
 	)
 	(pad "2" smd circle
 		(at 1.5 -7)
 		(size 1.6 1.6)
-		(layers "B.Cu" "B.Mask" "B.Paste")
+		(layers "B.Cu")
 		(uuid "b0ec29c1-c183-4964-a1a3-cf8ed1be39a7")
 	)
 	(embedded_fonts no)
