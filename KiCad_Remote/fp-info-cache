@@ -1,4 +1,4 @@
-27471426414055424
+27492784929224381
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -71805,6 +71805,90 @@ Yellow 5381 Series LED
 0
 2
 2
+LibraryNewHoleSize
+Arduino_Nano_WithMountingHoles
+Arduino Nano, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf
+Arduino Nano
+0
+32
+30
+LibraryNewHoleSize
+BatteryClip_Keystone_54_D16-19mm
+Battery clip for batteries with a diameter between 16-19 mm: https://www.keyelco.com/product.cfm/product_id/826
+battery clip 18650 18350 17350 CR123A 2/3A
+0
+6
+2
+LibraryNewHoleSize
+CP_Radial_D4.0mm_P2.00mm
+CP, Radial series, Radial, pin pitch=2.00mm, diameter=4mm, height=7mm, Electrolytic Capacitor
+CP Radial series Radial pin pitch 2.00mm diameter 4mm height 7mm Electrolytic Capacitor
+0
+2
+2
+LibraryNewHoleSize
+NetTie-2_SMD_Pad0.5mm
+Net tie, 2 pin, 0.5mm square SMD pads
+net tie
+0
+2
+2
+LibraryNewHoleSize
+NetTie_1.6mm
+
+net_tie
+0
+2
+2
+LibraryNewHoleSize
+NetTie_3mm
+
+
+0
+2
+2
+LibraryNewHoleSize
+NetTie_4mm
+
+net_tie
+0
+2
+2
+LibraryNewHoleSize
+PinHeader_1x03_P2.54mm_Horizontal
+Through hole angled pin header, 1x03, 2.54mm pitch, 6mm pin length, single row
+Through hole angled pin header THT 1x03 2.54mm single row
+0
+3
+3
+LibraryNewHoleSize
+PinHeader_1x03_P2.54mm_Vertical
+Through hole straight pin header, 1x03, 2.54mm pitch, single row
+Through hole pin header THT 1x03 2.54mm single row
+0
+3
+3
+LibraryNewHoleSize
+Unbenannt
+
+
+0
+0
+0
+LibraryNewHoleSize
+Unbenannt_1
+
+
+0
+0
+0
+LibraryNewHoleSize
+nRF24L01_Breakout
+nRF24L01 breakout board
+nRF24L01 adapter breakout
+0
+8
+8
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
