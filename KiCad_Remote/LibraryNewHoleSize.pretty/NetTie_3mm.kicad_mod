@@ -1,14 +1,12 @@
-(footprint "NetTie_1.6mm"
+(footprint "NetTie_3mm"
 	(version 20241229)
 	(generator "pcbnew")
 	(generator_version "9.0")
 	(layer "F.Cu")
-	(tags "net_tie")
 	(property "Reference" "REF**"
-		(at -1 -5.5 0)
+		(at 0 -0.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(hide yes)
 		(uuid "8fbebf9d-c598-4a86-ab7d-ba4e2f83a942")
 		(effects
 			(font
@@ -17,8 +15,8 @@
 			)
 		)
 	)
-	(property "Value" "NetTie_1.6mm"
-		(at -1.5 -4 0)
+	(property "Value" "NetTie_3mm"
+		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "7a8e7f3f-dc24-4875-80c7-6a630169d1dd")
@@ -56,20 +54,74 @@
 		)
 	)
 	(attr through_hole)
-	(net_tie_pad_groups "1,2")
 	(fp_rect
-		(start -3.5 -7.8)
-		(end 1.5 -6.2)
+		(start -6 -8.5)
+		(end 4 -5.5)
 		(stroke
-			(width 0)
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Cu")
+		(uuid "17c94a98-4da5-4004-b91d-3c47dc279edd")
+	)
+	(fp_circle
+		(center -6 -7)
+		(end -4.5 -7)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Cu")
+		(uuid "f9535fb1-909d-49a5-a294-6766cc4b0f3c")
+	)
+	(fp_circle
+		(center 4 -7)
+		(end 5.5 -7)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Cu")
+		(uuid "0cf9ebed-975e-4418-91b3-02d0713b9ab2")
+	)
+	(fp_rect
+		(start -6 -8.5)
+		(end 4 -5.5)
+		(stroke
+			(width 0.2)
 			(type solid)
 		)
 		(fill yes)
 		(layer "B.Cu")
 		(uuid "5610e3dd-ccad-473c-ae76-ee14dd17724d")
 	)
+	(fp_circle
+		(center -6 -7)
+		(end -4.5 -7)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.Cu")
+		(uuid "6e21b6e1-4895-44fb-b630-2e7de0abc26e")
+	)
+	(fp_circle
+		(center 4 -7)
+		(end 5.5 -7)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "B.Cu")
+		(uuid "9c0365ca-56c1-4104-993c-61645d234353")
+	)
 	(fp_text user "${REFERENCE}"
-		(at -1.5 -2.5 0)
+		(at 0 2.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "95524a55-1c4e-4c39-9054-c78afb49448b")
@@ -80,16 +132,20 @@
 			)
 		)
 	)
-	(pad "1" smd circle
-		(at -3.5 -7)
-		(size 1.6 1.6)
-		(layers "B.Cu")
+	(pad "1" thru_hole circle
+		(at -6 -7)
+		(size 1.8 1.8)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
 		(uuid "44042ebc-2de5-47c0-b888-abf3417c02cb")
 	)
-	(pad "2" smd circle
-		(at 1.5 -7)
-		(size 1.6 1.6)
-		(layers "B.Cu")
+	(pad "2" thru_hole circle
+		(at 4 -7)
+		(size 1.8 1.8)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
 		(uuid "b0ec29c1-c183-4964-a1a3-cf8ed1be39a7")
 	)
 	(embedded_fonts no)
