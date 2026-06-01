@@ -29,6 +29,7 @@ void setup()
 {
     Serial.begin(9600);
     printf_begin(); // Initialize printf functionality for Serial
+    // radio.setDataRate(RF24_250KBPS);
     if (!radio.begin())
     {
         Serial.println("Hardware not responding! Check your wiring.");
@@ -50,9 +51,9 @@ void setup()
     servo.attach(constantsPinsShip::servoSteerPin);
 
     // Steering servo calibration test: left -> right -> center
-    servo.write(0);
+    servo.write(70);
     delay(500);
-    servo.write(180);
+    servo.write(110);
     delay(500);
     servo.write(90);
     delay(500);
@@ -113,7 +114,7 @@ bool readRadio(uint8_t *buffer, RF24 *radio)
     if (radio->available())
     {
         radio->read(buffer, constantsCom::bufferSize);
-        Serial.println("Received: "+ String(buffer[0], HEX)+"|"+ String(buffer[1], HEX)+"|"+ String(buffer[2], HEX));
+        Serial.println("Received: " + String(buffer[0], HEX) + "|" + String(buffer[1], HEX) + "|" + String(buffer[2], HEX));
     }
     else
         return false;
@@ -136,10 +137,8 @@ bool getData(uint8_t *buffer, uint8_t *steer, uint8_t *throttle, bool *foilStab)
         }
         else if (buffer[i] >= constantsCom::steerMin && buffer[i] <= constantsCom::steerMax)
             *steer = buffer[i];
-        else if (buffer[i] == constantsCom::foilStabOn)
-            *foilStab = true;
-        else if (buffer[i] == constantsCom::foilStabOff)
-            *foilStab = false;
+        else if (buffer[i] == constantsCom::foilStabToggle)
+            *foilStab = !(*foilStab);
         else if (constantsCom::throttleToggle)
         {
             if (buffer[i] == constantsCom::throttleOn)

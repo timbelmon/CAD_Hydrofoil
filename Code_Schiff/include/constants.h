@@ -12,8 +12,7 @@ namespace constantsCom
     const uint8_t throttleOn = 2;
     const uint8_t throttleOff = 3;
     const uint8_t throttleRev = 4;
-    const uint8_t foilStabOn = 5;
-    const uint8_t foilStabOff = 6;
+    const uint8_t foilStabToggle = 5;
 }
 
 namespace constantsPinsShip
@@ -30,6 +29,6 @@ namespace constantsPinsShip
 
 namespace constantsShip
 {
-    const uint8_t steerAngleMax = 90;
+    const uint8_t steerAngleMax = 25;
     const uint8_t steerMidpoint = 90;
 }
