@@ -1,4 +1,4 @@
-27370427373965555
+27372218991755150
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -72113,6 +72113,13 @@ Arduino Nano
 0
 32
 30
+LibraryNewHoleSize
+BatteryClip_Keystone_54_D16-19mm
+Battery clip for batteries with a diameter between 16-19 mm: https://www.keyelco.com/product.cfm/product_id/826
+battery clip 18650 18350 17350 CR123A 2/3A
+0
+6
+2
 LibraryNewHoleSize
 CP_Radial_D4.0mm_P2.00mm
 CP, Radial series, Radial, pin pitch=2.00mm, diameter=4mm, height=7mm, Electrolytic Capacitor
