@@ -32,4 +32,6 @@ namespace constantsShip
     const uint8_t steerAngleMax = 25;
     const uint8_t steerMidpoint = 90;
     const uint16_t keepAliveTime = 2000;
+    const float motorBalance = 0.7;
+    const float steeringBalance = 0.7;
 }
