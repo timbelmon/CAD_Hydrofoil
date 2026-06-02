@@ -203,7 +203,7 @@ void changeSteer(uint8_t steer)
 void changeThrottle(uint8_t throttle)
 {
     // 1. Deadzone Handling (Stop everything if centered)
-    if (throttle >= 126 && throttle <= 128)
+    if (throttle >= (127 - constantsShip::throttleDeadzone) && throttle <= (127 + constantsShip::throttleDeadzone))
     {
         analogWrite(constantsPinsShip::in1Pin, 0);
         analogWrite(constantsPinsShip::in2Pin, 0);
@@ -221,9 +221,9 @@ void changeThrottle(uint8_t throttle)
     float steerStrength = constantsShip::steeringBalance;
 
     // 3. Forward Logic
-    if (throttle > 128)
+    if (throttle > (127 + constantsShip::throttleDeadzone))
     {
-        int baseThrottle = map(throttle, 127, 255, 0, 255);
+        int baseThrottle = map(throttle, 127 + constantsShip::throttleDeadzone + 1, 255, 0, 255);
         int leftThrottle = baseThrottle;
         int rightThrottle = baseThrottle;
 
@@ -243,8 +243,8 @@ void changeThrottle(uint8_t throttle)
         rightThrottle = rightThrottle * constantsShip::motorBalance;
 
         // Keep values safely bounded in PWM limits
-        leftThrottle = constrain(leftThrottle, 0, 255);
-        rightThrottle = constrain(rightThrottle, 0, 255);
+        leftThrottle = constrain(leftThrottle, constantsShip::minThrottle, 255);
+        rightThrottle = constrain(rightThrottle, constantsShip::minThrottle, 255);
 
         analogWrite(constantsPinsShip::in1Pin, leftThrottle);
         analogWrite(constantsPinsShip::in2Pin, 0);
@@ -252,9 +252,9 @@ void changeThrottle(uint8_t throttle)
         analogWrite(constantsPinsShip::in4Pin, 0);
     }
     // 4. Reverse Logic
-    else if (throttle < 126)
+    else if (throttle < (127 - constantsShip::throttleDeadzone))
     {
-        int baseThrottle = map(throttle, 125, 0, 0, 255);
+        int baseThrottle = map(throttle, 127 - constantsShip::throttleDeadzone - 1, 0, 0, 255);
         int leftThrottle = baseThrottle;
         int rightThrottle = baseThrottle;
 
@@ -271,8 +271,8 @@ void changeThrottle(uint8_t throttle)
 
         rightThrottle = rightThrottle * constantsShip::motorBalance;
 
-        leftThrottle = constrain(leftThrottle, 0, 255);
-        rightThrottle = constrain(rightThrottle, 0, 255);
+        leftThrottle = constrain(leftThrottle, constantsShip::minThrottle, 255);
+        rightThrottle = constrain(rightThrottle, constantsShip::minThrottle, 255);
 
         analogWrite(constantsPinsShip::in1Pin, 0);
         analogWrite(constantsPinsShip::in2Pin, leftThrottle);
