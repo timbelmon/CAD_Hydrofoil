@@ -17,7 +17,7 @@
 RF24 radio(constantsPinsShip::cePin, constantsPinsShip::csnPin); // CE, CSN
 Servo servo;
 
-const byte address[6] = "00001";
+const byte address[6] = "00005";
 
 bool readRadio(uint8_t *buffer, RF24 *radio);
 bool getData(uint8_t *buffer, uint8_t *steer, uint8_t *throttle, bool *foilStab);
@@ -62,6 +62,7 @@ void setup()
 
 void loop()
 {
+    static long lastKeepAlive = 0;
     static bool foilStab = false;
     uint8_t steer = 0;
     uint8_t throttle = 0;
@@ -84,12 +85,34 @@ void loop()
 
     memset(buffer, 0, sizeof(buffer));
     bool read = readRadio(buffer, &radio);
+    bool tempFoilStab = foilStab;
+    bool keepAlive = getData(buffer, &steer, &throttle, &tempFoilStab);
+    Serial.println(lastKeepAlive);
+    if ((millis() - lastKeepAlive) > constantsShip::keepAliveTime)
+    {
+        changeSteer(127);
+        changeThrottle(127);
+        while (true)
+        {
+            readRadio(buffer, &radio);
+            keepAlive = getData(buffer, &steer, &throttle, &tempFoilStab);
+            if (keepAlive)
+            {
+                break;
+            }
+            delay(100);
+        }
+    }
+
     if (!read)
     {
         return;
     }
-    bool tempFoilStab = foilStab;
-    bool keepAlive = getData(buffer, &steer, &throttle, &tempFoilStab);
+
+    if (keepAlive)
+    {
+        lastKeepAlive = millis();
+    }
     if (tempFoilStab != foilStab)
     {
         foilStab = tempFoilStab;
@@ -176,17 +199,17 @@ void changeThrottle(uint8_t throttle)
         analogWrite(constantsPinsShip::in3Pin, 0);
         analogWrite(constantsPinsShip::in4Pin, 0);
     }
-    else if (throttle > 128)
+    else if (throttle < 126)
     {
-        throttle = map(throttle, 127, 255, 0, 255);
+        throttle = map(throttle, 125, 0, 0, 255);
         analogWrite(constantsPinsShip::in1Pin, throttle);
         analogWrite(constantsPinsShip::in2Pin, 0);
         analogWrite(constantsPinsShip::in3Pin, throttle);
         analogWrite(constantsPinsShip::in4Pin, 0);
     }
-    else if (throttle < 126)
+    else if (throttle > 128)
     {
-        throttle = map(throttle, 125, 0, 0, 255);
+        throttle = map(throttle, 127, 255, 0, 255);
         analogWrite(constantsPinsShip::in1Pin, 0);
         analogWrite(constantsPinsShip::in2Pin, throttle);
         analogWrite(constantsPinsShip::in3Pin, 0);

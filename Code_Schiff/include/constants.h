@@ -24,11 +24,12 @@ namespace constantsPinsShip
     const uint8_t in1Pin = 3;
     const uint8_t in2Pin = 5;
     const uint8_t in3Pin = 6;
-    const uint8_t in4Pin = 5;
+    const uint8_t in4Pin = 9;
 }
 
 namespace constantsShip
 {
     const uint8_t steerAngleMax = 25;
     const uint8_t steerMidpoint = 90;
+    const uint16_t keepAliveTime = 2000;
 }
