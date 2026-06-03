@@ -8,7 +8,7 @@ const int SERVO_PIN_1  = 2;   // Pin 5  (D2)
 const int SERVO_PIN_2  = 3;   // Pin 6  (D3)
 
 // --- Hardware Constants ---
-const float R_REF = 10000.0;  // Value of your reference resistors to GND (10k Ohms)
+const float R_REF = 100000.0;  // Value of your reference resistors to GND (100k Ohms)
 
 // --- PID Tuning Parameters ---
 const float Kp = 0.1;  // Proportional gain
@@ -16,7 +16,7 @@ const float Ki = 0.05; // Integral gain
 const float Kd = 0.01; // Derivative gain
 
 // --- PID Target / Setpoint ---
-const float SETPOINT = 5000.0; 
+const float SETPOINT = 95000.0; 
 
 // --- Servo Objects ---
 Servo servo1;
@@ -36,7 +36,7 @@ unsigned long lastTime = 0;
 // --- Function Declarations ---
 float readResistance(int pin);
 float updatePID(float currentInput, PIDState &state, float dt);
-
+    
 void setup() {
     Serial.begin(115200);
     
@@ -51,37 +51,37 @@ void setup() {
 }
 
 void loop() {
-    unsigned long currentTime = millis();
-    float dt = (currentTime - lastTime) / 1000.0; // Delta time in seconds
+    // unsigned long currentTime = millis();
+    // float dt = (currentTime - lastTime) / 1000.0; // Delta time in seconds
     
-    // Fallback for timing anomalies or initial loops
-    if (dt <= 0.0) dt = 0.01; 
-    lastTime = currentTime;
+    // // Fallback for timing anomalies or initial loops
+    // if (dt <= 0.0) dt = 0.01; 
+    // lastTime = currentTime;
 
-    // 1. Measure actual resistances
-    float r1 = readResistance(ANALOG_PIN_1);
-    float r2 = readResistance(ANALOG_PIN_2);
+    // // 1. Measure actual resistances
+    // float r1 = readResistance(ANALOG_PIN_1);
+    // float r2 = readResistance(ANALOG_PIN_2);
 
-    // 2. Compute PID outputs
-    float output1 = updatePID(r1, pid1, dt);
-    float output2 = updatePID(r2, pid2, dt);
+    // // 2. Compute PID outputs
+    // float output1 = updatePID(r1, pid1, dt);
+    // float output2 = updatePID(r2, pid2, dt);
 
-    // 3. Map PID output to Servo degrees (0 to 180)
-    // Assumes PID output ranges between -90 and 90 relative to the 90-degree midpoint
-    int servoPos1 = constrain(90 + (int)output1, 0, 180);
-    int servoPos2 = constrain(90 + (int)output2, 0, 180);
+    // // 3. Map PID output to Servo degrees (60 to 120)
+    // // Limits the physical movement to 30 degrees maximum in either direction from 90
+    // int servoPos1 = constrain(90 + (int)output1, 60, 120);
+    // int servoPos2 = constrain(90 + (int)output2, 60, 120);
 
-    // 4. Actuate Servos
-    servo1.write(servoPos1);
-    servo2.write(servoPos2);
+    // // 4. Actuate Servos
+    // servo1.write(servoPos1);
+    // servo2.write(servoPos2);
 
-    // Debugging output over Serial Monitor
-    Serial.print("R1: "); Serial.print(r1);
-    Serial.print(" -> S1: "); Serial.print(servoPos1);
-    Serial.print(" | R2: "); Serial.print(r2);
-    Serial.print(" -> S2: "); Serial.println(servoPos2);
+    // // Debugging output over Serial Monitor
+    // Serial.print("R1: "); Serial.print(r1);
+    // Serial.print(" -> S1: "); Serial.print(servoPos1);
+    // Serial.print(" | R2: "); Serial.print(r2);
+    // Serial.print(" -> S2: "); Serial.println(servoPos2);
 
-    delay(20); // Small delay to decouple loop speed and prevent serial spam
+    // delay(20); // Small delay to decouple loop speed and prevent serial spam
 }
 
 /**
@@ -123,13 +123,12 @@ float updatePID(float currentInput, PIDState &state, float dt) {
     // Combined output
     float output = Pout + Iout + Dout;
 
-    // Optional: Constrain PID output to prevent integral windup 
-    // limits the modification range to +/- 90 degrees
-    if (output > 90.0) {
-        output = 90.0;
-        state.integral -= error * dt; // Anti-windup clamping
-    } else if (output < -90.0) {
-        output = -90.0;
+    // Anti-windup clamping limited to +/- 30 degrees
+    if (output > 30.0) {
+        output = 30.0;
+        state.integral -= error * dt; 
+    } else if (output < -30.0) {
+        output = -30.0;
         state.integral -= error * dt;
     }
 

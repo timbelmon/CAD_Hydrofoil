@@ -21,7 +21,7 @@
 // Explicitly type your physical pins here (e.g., 7 and 8)
 RF24 radio(7, 8);
 
-const byte address[6] = "00001";
+const byte address[6] = "00005";
 
 // Buffer for sending data
 uint8_t buffer[constantsCom::bufferSize];
@@ -70,7 +70,7 @@ void setup()
   }
 
   radio.openWritingPipe(address);
-  radio.setPALevel(RF24_PA_MIN);
+  radio.setPALevel(RF24_PA_MAX);
   radio.stopListening();
   
   Serial.println("Remote Initialized successfully!");
@@ -108,31 +108,49 @@ void loop()
     steer = map(x, 0, 1023, constantsCom::steerMin, constantsCom::steerMax);
   }
 
- // Speed / Throttle
+// Motor speed / Throttle
   int speed = analogRead(speedPin);
   uint8_t mappedSpeed = 0; 
 
-  // 1. Constrain raw readings to our defined physical limits (0 to 655).
-  // This ensures any value >= 655 stays exactly 655, preventing out-of-bounds mapping.
-  int maxRead = 655;
+  // 1. Update maxRead to 680 based on your actual hardware ceiling
+  int maxRead = 680;
+  int potMiddle = 500;
   int constrainedSpeed = constrain(speed, 0, maxRead);
+
+  // Calculate the target middle value for your radio throttle
+  int throttleMid = (constantsCom::throttleMin + constantsCom::throttleMax) / 2;
 
   // 2. Check threshold against the constrained value
   if (abs(constrainedSpeed - lastSpeed) > THRESHOLD)
   {
     lastSpeed = constrainedSpeed;
     
-    // 3. Reverse the mapping order:
-    // maxRead (655) maps to throttleMin
-    // 0 maps to throttleMax
-    speed = (int)map(constrainedSpeed, maxRead, 0, constantsCom::throttleMin, constantsCom::throttleMax);
+    // 3. Piece-wise mapping to linearize the logarithmic pot
+    if (constrainedSpeed <= potMiddle)
+    {
+      // Map the aggressive lower half of the pot (0 to 500)
+      speed = map(constrainedSpeed, 0, potMiddle, constantsCom::throttleMax, throttleMid);
+    }
+    else
+    {
+      // Map the flatter upper half of the pot (500 to 680)
+      speed = map(constrainedSpeed, potMiddle, maxRead, throttleMid, constantsCom::throttleMin);
+    }
+    
     buffer[i++] = speed;
     mappedSpeed = speed;
   }
   else
   {
-    // If not updated this frame, calculate the inverted value for debug visibility
-    mappedSpeed = (int)map(constrainedSpeed, maxRead, 0, constantsCom::throttleMin, constantsCom::throttleMax);
+    // If not updated this frame, calculate for debug visibility
+    if (constrainedSpeed <= potMiddle)
+    {
+      mappedSpeed = map(constrainedSpeed, 0, potMiddle, constantsCom::throttleMax, throttleMid);
+    }
+    else
+    {
+      mappedSpeed = map(constrainedSpeed, potMiddle, maxRead, throttleMid, constantsCom::throttleMin);
+    }
   }
 
  // Motor button
