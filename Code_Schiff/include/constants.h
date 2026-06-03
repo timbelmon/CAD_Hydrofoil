@@ -29,11 +29,11 @@ namespace constantsPinsShip
 
 namespace constantsShip
 {
-    const uint8_t steerAngleMax = 25;
+    const uint8_t steerAngleMax = 45;
     const uint8_t steerMidpoint = 90;
-    const uint16_t keepAliveTime = 2000;
+    const uint16_t keepAliveTime = 1000;
     const uint8_t minThrottle = 50;
     const uint8_t throttleDeadzone = 5;
-    const float motorBalance = 0.7;
-    const float steeringBalance = 0.7;
+    const float motorBalance = 0.65;
+    const float steeringBalance = 0.6;
 }
